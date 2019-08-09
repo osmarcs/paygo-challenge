@@ -1,0 +1,25 @@
+.main {
+  display: flex;
+  flex: 1 1 60px;
+  flex-direction: column;
+}
+.footer {
+  border-top: 1px solid var(--black);
+  flex-basis: inherit;
+}
+
+.channel_header {
+  border-bottom: 1px solid var(--black);
+  padding: var(--grid-base);
+  margin-bottom: 0;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column-reverse;
+  flex-grow: 1;
+  flex-basis: inherit;
+  padding: var(--grid-base);
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
