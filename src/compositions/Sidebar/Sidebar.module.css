@@ -1,0 +1,8 @@
+.sidebar {
+  background-color: var(--purple);
+  color: var(--white);
+  display: flex;
+  flex-basis: 230px;
+  flex-direction: column;
+  padding: var(--grid-base);
+}
