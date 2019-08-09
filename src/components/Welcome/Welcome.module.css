@@ -1,0 +1,11 @@
+.PlaceholderMessage {
+  color: var(--gray-lighter);
+  font-size: 2rem;
+  display: flex;
+  flex-basis: inherit;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+}
+  
