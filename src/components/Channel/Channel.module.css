@@ -1,0 +1,23 @@
+.bagde_unread {
+  background-color: var(--red);
+  border-radius: 30%;
+  padding: 0px 5px;
+  font-size: 0.9rem;
+  margin-left: 5px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+.list li{
+  margin: 10px 0;
+}
+
+.unread {
+  font-weight: bold;
+}
+
+a {
+  cursor: pointer
+}
