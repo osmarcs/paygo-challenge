@@ -1,0 +1,9 @@
+.person {
+  font-weight: bold;
+}
+
+.time {
+  color: var(--gray);
+  font-size: .9rem;
+  margin-left: calc(var(--grid-base) / 2);
+}
