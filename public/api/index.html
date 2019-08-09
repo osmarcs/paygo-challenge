@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>API Reference</title>
+
+    <style>
+      body {
+        color: #1d2241;
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+          "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+          sans-serif;
+        font-size: 16px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      p,
+      pre,
+      table {
+        margin-bottom: 2rem;
+      }
+
+      pre {
+        background-color: #f6f8fa;
+        border-radius: .25rem;
+        padding: 1rem;
+        white-space: pre-wrap;
+      }
+
+      pre code {
+        background-color: inherit;
+      }
+
+      code {
+        background-color: #f6f8fa;
+        font-size: .9em;
+      }
+
+      table {
+        border-collapse: collapse;
+        table-layout: fixed;
+        width: 100%;
+      }
+
+      tbody tr:nth-child(odd) {
+        background-color: #f6f8fa;
+      }
+
+      th,
+      td {
+        border: 1px solid #dfe2e5;
+        padding: .5rem 1rem;
+      }
+
+      .container {
+        margin: 0 auto;
+        max-width: 54rem;
+        padding: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="api-reference">API reference</h1>
+      <p><strong>Base URL: <code>http://localhost:3001</code></strong></p>
+      <h2 id="get-channels-">GET <code>/channels</code></h2>
+      <p>Returns a list of all channels.</p>
+      <h3 id="channel-attributes">Channel attributes</h3>
+      <table>
+      <thead>
+      <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+      <th>Type</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td><code>id</code></td>
+      <td>Channel ID</td>
+      <td>string</td>
+      </tr>
+      <tr>
+      <td><code>name</code></td>
+      <td>Channel name</td>
+      <td>string</td>
+      </tr>
+      </tbody>
+      </table>
+      <h4 id="example-response-body">Example response body</h4>
+  <pre><code class="lang-json">[
+    {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"273"</span>,
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"general"</span>
+    },
+    {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"764"</span>,
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"random"</span>
+    }
+  ]
+  </code></pre>
+  <h2 id="get-messages-_expand-user-">GET <code>/messages?_expand=user</code></h2>
+  <p>Returns a list of all messages with its associated user.</p>
+  <h3 id="message-attributes">Message attributes</h3>
+  <table>
+  <thead>
+  <tr>
+  <th>Attribute</th>
+  <th>Description</th>
+  <th>Type</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><code>id</code></td>
+  <td>Message ID</td>
+  <td>string</td>
+  </tr>
+  <tr>
+  <td><code>timestamp</code></td>
+  <td>Message timestamp</td>
+  <td>string</td>
+  </tr>
+  <tr>
+  <td><code>channel_id</code></td>
+  <td>ID of channel message belongs to</td>
+  <td>string</td>
+  </tr>
+  <tr>
+  <td><code>content</code></td>
+  <td>Message content</td>
+  <td>string</td>
+  </tr>
+  <tr>
+  <td><code>is_unread</code></td>
+  <td>Whether message has been read</td>
+  <td>boolean</td>
+  </tr>
+  <tr>
+  <td><code>user</code></td>
+  <td>Associated user</td>
+  <td>object</td>
+  </tr>
+  <tr>
+  <td><code>user.id</code></td>
+  <td>Associated user ID</td>
+  <td>string</td>
+  </tr>
+  <tr>
+  <td><code>user.username</code></td>
+  <td>Associated user&#39;s username</td>
+  <td>string</td>
+  </tr>
+  </tbody>
+  </table>
+  <h4 id="example-response-body">Example response body</h4>
+  <pre><code class="lang-json">[
+    {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"704"</span>,
+      <span class="hljs-attr">"timestamp"</span>: <span class="hljs-string">"1:40 PM"</span>,
+      <span class="hljs-attr">"channel_id"</span>: <span class="hljs-string">"273"</span>,
+      <span class="hljs-attr">"content"</span>: <span class="hljs-string">"How much wood could a woodchuck chuck if a woodchuck could chuck wood?"</span>,
+      <span class="hljs-attr">"is_unread"</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">"user"</span>: {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-string">"405"</span>,
+        <span class="hljs-attr">"username"</span>: <span class="hljs-string">"vito"</span>
+      }
+    },
+    {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"140"</span>,
+      <span class="hljs-attr">"timestamp"</span>: <span class="hljs-string">"1:42 PM"</span>,
+      <span class="hljs-attr">"channel_id"</span>: <span class="hljs-string">"273"</span>,
+      <span class="hljs-attr">"content"</span>: <span class="hljs-string">"As much wood as a woodchuck could chuck, if a woodchuck could chuck wood."</span>,
+      <span class="hljs-attr">"is_unread"</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">"user"</span>: {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-string">"847"</span>,
+        <span class="hljs-attr">"username"</span>: <span class="hljs-string">"janelle"</span>
+      }
+    }
+  ]
+  </code></pre>
+    </div>
+  </body>
+</html>
